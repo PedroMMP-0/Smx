@@ -1,3 +1,21 @@
+
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No thanks
+1 of 243
+(no subject)
+Inbox
+
+Davi
+Attachments
+8:24 AM (2 minutes ago)
+to me
+
+
+ 16 Attachments
+  •  Scanned by Gmail
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +31,6 @@ body {
     color: white;
 }
 
-/* HEADER */
 .topo {
     display: flex;
     justify-content: space-between;
@@ -29,6 +46,9 @@ body {
 .topo h1 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
 }
 
 .linktoporight {
@@ -39,7 +59,10 @@ body {
 .linktoporight a {
     text-decoration: none;
     color: white;
+    font-weight: 400;
     font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
     position: relative;
 }
 
@@ -58,7 +81,6 @@ body {
     width: 100%;
 }
 
-/* CONTEÚDO */
 .conteudo {
     flex: 1;
     display: flex;
@@ -68,48 +90,85 @@ body {
     overflow: hidden;
 }
 
-/* VIDEO FUNDO */
-.video-bg {
+.conteudo::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+    inset: 0;
+    background-image: url(goatmakoto.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
     z-index: 0;
 }
 
-/* OVERLAY ESCURO */
 .conteudo::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+    background: linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
     z-index: 1;
 }
 
-/* CONTEÚDO POR CIMA */
 .hero-split {
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
 }
 
 .hero-text {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 30px;
+    flex: 1;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(255, 255, 255, 0.25);
     border-radius: 12px;
+    padding: 30px;
     font-size: 18px;
+    font-weight: 300;
+    line-height: 1.75;
+    opacity: 0.9;
 }
 
-.capinha {
-    
+.hero-text p {
+    text-shadow: 10px 10px 15px black;
 }
 
-/* FOOTER */
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-placeholder:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 .inferior {
     height: 60px;
     background: rgba(0, 0, 0, 0.8);
@@ -117,24 +176,114 @@ body {
     align-items: center;
     padding: 0 40px;
     font-size: 13px;
+    letter-spacing: 1.5px;
     position: relative;
     z-index: 10;
 }
 
-/* MOBILE */
+.amolestado{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   MOBILE — até 768px
+   ===================== */
 @media (max-width: 768px) {
+
+    /* Header: empilha título e links */
     .topo {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 12px;
+        padding: 16px 20px;
     }
 
+    .topo h1 {
+        font-size: 22px;
+    }
+
+    /* Links do header: tamanho e espaçamento menores */
+    .linktoporight {
+        gap: 16px;
+        flex-wrap: wrap;          /* se não couber numa linha, quebra */
+    }
+
+    .linktoporight a {
+        font-size: 13px;
+    }
+
+    /* Conteúdo: menos padding lateral */
     .conteudo {
-        padding: 30px 20px;
+        padding: 30px 16px;
+        align-items: flex-start;
     }
 
+    /* Gradiente de fundo vira vertical no mobile */
+    .conteudo::after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    }
+
+    /* Hero: coluna única */
+    .hero-split {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Texto: fonte menor, padding menor */
     .hero-text {
         font-size: 15px;
         padding: 20px;
+        line-height: 1.65;
+        min-height: unset;
+    }
+
+    /* Imagem: ocupa largura toda */
+    .hero-img {
+        width: 100%;
+    }
+
+    .img-placeholder {
+        border-radius: 12px;
+    }
+
+    /* Footer: padding lateral menor */
+    .inferior {
+        padding: 0 20px;
+        font-size: 12px;
     }
 }
+
+/* =====================
+   MOBILE PEQUENO — até 400px
+   ===================== */
+@media (max-width: 400px) {
+
+    .topo h1 {
+        font-size: 20px;
+    }
+
+    .linktoporight {
+        gap: 10px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+        padding: 16px;
+    }
+}
+style2.css
+Displaying style2.css.
