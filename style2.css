@@ -23,6 +23,17 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 10;
+
+    animation: topoVerde 2s ease forwards;
+}
+
+@keyframes topoVerde {
+    from {
+        background: rgba(255, 255, 255, 0.08);
+    }
+    to {
+        background: rgba(0, 200, 100, 0.8);
+    }
 }
 
 .topo h1 {
