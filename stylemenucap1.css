@@ -36,15 +36,6 @@ body {
     }
 }
 
-@keyframes topoVerde {
-    from {
-        background: rgba(255, 255, 255, 0.08);
-    }
-    to {
-        background: rgba(0, 255, 0, 0.6);
-    }
-}
-
 .topo h1 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
@@ -122,6 +113,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     animation: fadeUp 0.7s ease both;
+    position: relative;
 }
 
 .hero-text {
@@ -135,7 +127,14 @@ body {
     font-weight: 300;
     line-height: 1.75;
     opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* posiciona o link embaixo */
     text-align: center;
+}
+
+.hero-text a {
+    margin-bottom: 10px; /* afasta um pouco da borda inferior */
 }
 
 .hero-text p {
@@ -172,6 +171,17 @@ body {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+.overlay-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 3; /* acima do link */
+    border-radius: 12px;
+}
+
 .inferior {
     height: 60px;
     background: rgba(0, 0, 0, 0.8);
@@ -190,7 +200,6 @@ body {
     color: white;
 }
 
-
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -202,12 +211,8 @@ body {
     }
 }
 
-/* =====================
-   MOBILE — até 768px
-   ===================== */
+/* ===================== MOBILE — até 768px ===================== */
 @media (max-width: 768px) {
-
-    /* Header: empilha título e links */
     .topo {
         flex-direction: column;
         align-items: flex-start;
@@ -219,42 +224,37 @@ body {
         font-size: 22px;
     }
 
-    /* Links do header: tamanho e espaçamento menores */
     .linktoporight {
         gap: 16px;
-        flex-wrap: wrap;          /* se não couber numa linha, quebra */
+        flex-wrap: wrap;
     }
 
     .linktoporight a {
         font-size: 13px;
     }
 
-    /* Conteúdo: menos padding lateral */
     .conteudo {
         padding: 30px 16px;
         align-items: flex-start;
     }
 
-    /* Gradiente de fundo vira vertical no mobile */
     .conteudo::after {
         background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
     }
 
-    /* Hero: coluna única */
     .hero-split {
         flex-direction: column;
         gap: 24px;
     }
 
-    /* Texto: fonte menor, padding menor */
     .hero-text {
         font-size: 15px;
         padding: 20px;
         line-height: 1.65;
         min-height: unset;
+        align-items: flex-end;
     }
 
-    /* Imagem: ocupa largura toda */
     .hero-img {
         width: 100%;
     }
@@ -263,18 +263,14 @@ body {
         border-radius: 12px;
     }
 
-    /* Footer: padding lateral menor */
     .inferior {
         padding: 0 20px;
         font-size: 12px;
     }
 }
 
-/* =====================
-   MOBILE PEQUENO — até 400px
-   ===================== */
+/* ===================== MOBILE PEQUENO — até 400px ===================== */
 @media (max-width: 400px) {
-
     .topo h1 {
         font-size: 20px;
     }
