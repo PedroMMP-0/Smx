@@ -54,12 +54,7 @@ body {
     align-items: center;
     position: relative;
 }
-.hero-split {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
+
 /* Folha A4 */
 .a4-overlay {
     width: 200px;
