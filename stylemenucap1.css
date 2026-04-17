@@ -21,7 +21,6 @@ body {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
     z-index: 10;
     animation: topoVerde 2s ease forwards;
 }
@@ -29,14 +28,6 @@ body {
 @keyframes topoVerde {
     from { background: rgba(255, 255, 255, 0.08); }
     to { background: rgba(0, 255, 0, 0.6); }
-}
-
-.topo h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-decoration: none;
 }
 
 .linktoporight {
@@ -49,9 +40,8 @@ body {
     color: white;
     font-weight: 400;
     font-size: 15px;
-    letter-spacing: 0.5px;
-    transition: 0.3s;
     position: relative;
+    transition: 0.3s;
 }
 
 .linktoporight a::after {
@@ -74,7 +64,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 40px;
     position: relative;
     overflow: hidden;
 }
@@ -98,34 +87,33 @@ body {
     z-index: 1;
 }
 
+/* Hero split: A4 + Link */
 .hero-split {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     position: relative;
-    width: 100%;
     z-index: 2;
 }
 
+/* Folha A4 */
 .a4-overlay {
     width: 200px;
     aspect-ratio: 1 / 1.414;
     background: rgba(255, 255, 255, 0.1);
     border: 2px dashed rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+/* Link abaixo da A4 */
 .hero-link {
-    margin-top: 10px;
     font-size: 20px;
     text-decoration: none;
     color: white;
 }
 
+/* Footer */
 .inferior {
     height: 60px;
     background: rgba(0, 0, 0, 0.8);
@@ -144,40 +132,14 @@ body {
     color: white;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===================== MOBILE — até 768px ===================== */
+/* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
-    .topo {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 16px 20px;
-    }
-
-    .topo h1 { font-size: 22px; }
-
+    .topo { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 20px; }
     .linktoporight { gap: 16px; flex-wrap: wrap; }
-
     .linktoporight a { font-size: 13px; }
-
-    .conteudo { padding: 30px 16px; }
-
-    .conteudo::after {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
-    }
-
-    .hero-split { gap: 16px; }
-
     .hero-link { font-size: 18px; }
 }
 
-/* ===================== MOBILE PEQUENO — até 400px ===================== */
 @media (max-width: 400px) {
-    .topo h1 { font-size: 20px; }
-    .linktoporight { gap: 10px; }
     .hero-link { font-size: 16px; }
 }
