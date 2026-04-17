@@ -22,12 +22,6 @@ body {
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    animation: topoVerde 2s ease forwards;
-}
-
-@keyframes topoVerde {
-    from { background: rgba(255, 255, 255, 0.08); }
-    to { background: rgba(0, 255, 0, 0.6); }
 }
 
 .linktoporight {
@@ -59,41 +53,20 @@ body {
     width: 100%;
 }
 
+/* ================== CONTEÚDO ================== */
 .conteudo {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
 }
 
-.conteudo::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url(goatmakoto.png);
-    background-size: cover;
-    background-position: center;
-    opacity: 0.4;
-    z-index: 0;
-}
-
-.conteudo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
-    z-index: 1;
-}
-
-/* Hero split: A4 + Link */
 .hero-split {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    position: relative;
     z-index: 2;
 }
 
@@ -132,7 +105,7 @@ body {
     color: white;
 }
 
-/* ===================== MOBILE ===================== */
+/* ===================== RESPONSIVO ===================== */
 @media (max-width: 768px) {
     .topo { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 20px; }
     .linktoporight { gap: 16px; flex-wrap: wrap; }
