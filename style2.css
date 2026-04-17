@@ -124,6 +124,10 @@ body {
     font-weight: 300;
     line-height: 1.75;
     opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* posiciona o link embaixo */
+    text-align: center;
 }
 
 .hero-text p {
