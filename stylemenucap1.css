@@ -62,12 +62,25 @@ body {
     width: 100%;
 }
 /* ================== CONTEÚDO ================== */
+
+.conteudo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(bliss.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 0;
+}
+
 .conteudo {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    background-image:
 }
 
 /* Folha A4 */
