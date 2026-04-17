@@ -17,21 +17,21 @@ body {
     align-items: center;
     padding: 20px 40px;
     backdrop-filter: blur(10px);
-    /* Substituímos o background fixo pela animação */
-    animation: transicaoCor 4s infinite alternate ease-in-out; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 10;
+
+    /* Configuração da Animação */
+    /* 0.8s = Rapidez | ease-out = Fluidez | forwards = Mantém a cor final */
+    animation: transicaoUnica 0.8s ease-out forwards;
 }
 
-/* Definição da animação */
-@keyframes transicaoCor {
+/* Definição dos frames */
+@keyframes transicaoUnica {
     0% {
-        /* Azul translúcido (aproximado ao seu gradiente) */
-        background-color: rgba(0, 110, 255, 0.3); 
+        background-color: rgba(0, 110, 255, 0.8); /* Azul inicial forte */
     }
     100% {
-        /* Verde esmeralda translúcido */
-        background-color: rgba(46, 204, 113, 0.4); 
+        background-color: #2ecc71; /* Verde forte (Emerald) final */
     }
 }
 
