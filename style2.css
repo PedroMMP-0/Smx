@@ -190,6 +190,22 @@ body {
     }
 }
 
+.a4-overlay {
+    position: absolute; /* para ficar sobre o conteúdo do hero-text */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centraliza */
+    width: 200px; /* largura base, pode ajustar */
+    aspect-ratio: 1 / 1.414; /* proporção A4 */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    z-index: 2; /* acima do background do hero-text, abaixo do link se necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* =====================
    MOBILE — até 768px
    ===================== */
