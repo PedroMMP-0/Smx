@@ -57,7 +57,7 @@ body {
 .hero-caixa {
     position: relative;
     z-index: 5;
-    max-width: 600px;       /* largura máxima — texto quebra aqui */
+    max-width: 800px;       /* largura máxima — texto quebra aqui */
     width: 90%;             /* responsivo */
     background: rgba(0, 0, 0, 0.45);
     border: 1.5px solid rgba(255, 255, 255, 0.25);
