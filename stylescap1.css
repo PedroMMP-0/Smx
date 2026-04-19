@@ -11,19 +11,53 @@ body {
     background: linear-gradient(135deg, #006eff, #064c5f);
     color: white;
 }
+/* Topo fixo */
 .topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* ... resto das propriedades que já tem */
+}
 
-    /* Configuração da Animação */
-    /* 0.8s = Rapidez | ease-out = Fluidez | forwards = Mantém a cor final */
-    animation: transicaoUnica 0.8s ease-out forwards;
+/* Fundo fixo no conteúdo */
+.conteudo::before {
+    content: "";
+    position: fixed; /* <-- muda de absolute para fixed */
+    inset: 0;
+    background-image: url(bliss.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* Compensar o topo fixo */
+.conteudo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 80px; /* altura do header */
+}
+
+/* A nova div de texto */
+.hero-caixa {
+    position: relative;
+    z-index: 5;
+    max-width: 600px;       /* largura máxima — texto quebra aqui */
+    width: 90%;             /* responsivo */
+    background: rgba(0, 0, 0, 0.45);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 32px 36px;
+    backdrop-filter: blur(8px);
+    font-size: 16px;
+    line-height: 1.7;
+    color: white;
+    word-wrap: break-word;  /* quebra palavras longas se necessário */
+    overflow-wrap: break-word;
 }
 
 /* Definição dos frames */
@@ -64,25 +98,7 @@ body {
 }
 /* ================== CONTEÚDO ================== */
 
-.conteudo::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url(bliss.jpg);
-    background-size: cover;
-    background-position: center;
-    opacity: 0.4;
-    z-index: 0;
-}
 
-.conteudo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-image:
-}
 
 /* Folha A4 */
 .a4-overlay {
