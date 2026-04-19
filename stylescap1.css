@@ -17,6 +17,17 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+    /* Configuração da Animação */
+    /* 0.8s = Rapidez | ease-out = Fluidez | forwards = Mantém a cor final */
+    animation: transicaoUnica 0.8s ease-out forwards;
     /* ... resto das propriedades que já tem */
 }
 
