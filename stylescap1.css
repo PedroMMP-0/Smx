@@ -19,7 +19,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    position: fixed;
+    
 
     /* Configuração da Animação */
     /* 0.8s = Rapidez | ease-out = Fluidez | forwards = Mantém a cor final */
