@@ -126,3 +126,61 @@ body {
 @media (max-width: 400px) {
     .hero-link { font-size: 16px; }
 }
+
+/* ================== CARDS ================== */
+.cards-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card-cap {
+    width: 200px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.card-cap:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-4px);
+}
+
+.card-cap:active {
+    transform: translateY(-1px);
+}
+
+.card-label {
+    pointer-events: none;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .card-cap {
+        width: 140px;
+        height: 185px;
+        font-size: 14px;
+    }
+    .cards-wrapper {
+        gap: 16px;
+    }
+}
