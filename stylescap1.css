@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #006eff, #064c5f);
+    color: white;
+}
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+    /* Configuração da Animação */
+    /* 0.8s = Rapidez | ease-out = Fluidez | forwards = Mantém a cor final */
+    animation: transicaoUnica 0.8s ease-out forwards;
+}
+
+/* Definição dos frames */
+
+
+
+.linktoporight {
+    display: flex;
+    gap: 25px;
+}
+.linktoporight a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+.linktoporight a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transition: 0.3s;
+}
+.linktoporight a:hover::after {
+    width: 100%;
+}
+/* ================== CONTEÚDO ================== */
+
+.conteudo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(bliss.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.conteudo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image:
+}
+
+/* Folha A4 */
+.a4-overlay {
+    width: 200px;
+    aspect-ratio: 1 / 1.414;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Footer */
+.inferior {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 10;
+}
+.amolestado {
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+.hero-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 768px) {
+    .topo { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 20px; }
+    .linktoporight { gap: 16px; flex-wrap: wrap; }
+    .linktoporight a { font-size: 13px; }
+    .hero-link { font-size: 18px; }
+}
+@media (max-width: 400px) {
+    .hero-link { font-size: 16px; }
+}
+
+/* ================== CARDS ================== */
+.cards-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card-cap {
+    width: 200px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.card-cap:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-4px);
+}
+
+.card-cap:active {
+    transform: translateY(-1px);
+}
+
+.card-label {
+    pointer-events: none;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .card-cap {
+        width: 140px;
+        height: 185px;
+        font-size: 14px;
+    }
+    .cards-wrapper {
+        gap: 16px;
+    }
+}
