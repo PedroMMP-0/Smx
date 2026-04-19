@@ -29,7 +29,9 @@ body {
 /* Definição dos frames */
 
 @keyframes transicaoUnica {
-    
+    0% {
+        background-color: #2ecc71; /* Azul inicial forte */
+    }
     100% {
         background-color: #2ecc71; /* Verde forte (Emerald) final */
     }
